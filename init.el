@@ -11,4 +11,9 @@
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
+(setq url-proxy-services
+   '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
+     ("http" . "127.0.0.1:3128")
+     ("https" . "127.0.0.1:3128")))
+
 (server-start)
