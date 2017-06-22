@@ -1,19 +1,25 @@
 (require 'package)
-
-(package-initialize)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(package-initialize)
 
 (custom-set-variables
  '(custom-enabled-themes (quote (tango-dark)))
- '(package-selected-packages (quote (json-mode markdown-mode))))
+ '(package-selected-packages
+   (quote
+    (json-mode markdown-mode))))
 
 (custom-set-faces)
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 (setq url-proxy-services
-   '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
-     ("http" . "127.0.0.1:3128")
-     ("https" . "127.0.0.1:3128")))
+ '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
+  ("http" . "127.0.0.1:3128")
+  ("https" . "127.0.0.1:3128")))
+
+(global-linum-mode t)
+(global-whitespace-mode)
+;; override defult 'whitespace-mode' settings for styling to remove 'lines' value, which is responsible for highlightig lines longer than 80 columns
+(setq whitespace-style '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark))
 
 (server-start)
