@@ -21,8 +21,8 @@
 
 (global-linum-mode t)
 (global-whitespace-mode)
-;; override defult 'whitespace-mode' settings for styling to remove 'lines' value, which is responsible for highlightig lines longer than 80 columns
-(setq whitespace-style '(face tabs spaces trailing space-before-tab newline indentation empty space-after-tab space-mark tab-mark newline-mark))
+(setq whitespace-style '(face spaces trailing space-before-tab newline indentation
+ empty space-after-tab space-mark tab-mark newline-mark))
 
 ;; spelling - requires 'aspell' program installed
 (setq ispell-program-name "aspell")
