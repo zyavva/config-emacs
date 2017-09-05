@@ -6,7 +6,7 @@
  '(custom-enabled-themes (quote (tango-dark)))
  '(package-selected-packages
    (quote
-    (fold-this expand-region intero json-mode markdown-mode))))
+    (neotree fold-this expand-region intero json-mode markdown-mode))))
 
 (custom-set-faces)
 
@@ -34,4 +34,9 @@
 (global-set-key (kbd "C-c C-+") 'fold-this)
 (global-set-key (kbd "C-c M-+") 'fold-this-unfold-all)
 
-(server-start)
+;; Common User Access key bindings
+(cua-mode t)
+(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+(transient-mark-mode 1) ;; No region when it is not highlighted
+
+;; (server-start)
