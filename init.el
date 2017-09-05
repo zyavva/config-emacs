@@ -34,6 +34,10 @@
 (global-set-key (kbd "C-c C-+") 'fold-this)
 (global-set-key (kbd "C-c M-+") 'fold-this-unfold-all)
 
+;; NeoTree
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; Common User Access key bindings
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
