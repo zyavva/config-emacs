@@ -22,17 +22,21 @@
 (setq whitespace-style
  '(face spaces trailing space-before-tab newline empty space-after-tab space-mark tab-mark newline-mark))
 
+;; starting emacs client full screen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
 ;; spelling - requires 'aspell' program installed
 (setq ispell-program-name "aspell")
 (require 'ispell)
 
+;; expand selection
 (require 'expand-region)
 (global-set-key (kbd "C-M-w") 'er/expand-region)
 
+;; fold this
 (require 'fold-this)
-(global-set-key (kbd "C-c C--") 'fold-this-all)
-(global-set-key (kbd "C-c C-+") 'fold-this)
-(global-set-key (kbd "C-c M-+") 'fold-this-unfold-all)
+(global-set-key (kbd "C--") 'fold-active-region)
+(global-set-key (kbd "M-+") 'fold-this-unfold-all)
 
 ;; NeoTree
 (require 'neotree)
