@@ -1,3 +1,4 @@
+;; package managment
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
@@ -10,14 +11,29 @@
 
 (custom-set-faces)
 
-(setq backup-directory-alist `(("." . "~/.saves")))
+;; miscellaneous global variables
+(setq
+ inhibit-startup-screen t
+ create-lockfiles nil
+ make-backup-files nil
+ column-number-mode t)
 
+;; miscellaneous buffer local variables
+(setq-default
+ indent-tabs-mode nil
+ tab-width 4
+ c-basic-offset 4)
+
+;; connection proxy for office environment
 (setq url-proxy-services
  '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
   ("http" . "127.0.0.1:3128")
   ("https" . "127.0.0.1:3128")))
 
+;; show line numbers
 (global-linum-mode t)
+
+;; show white spaces
 (global-whitespace-mode)
 (setq whitespace-style
  '(face spaces trailing space-before-tab newline empty space-after-tab space-mark tab-mark newline-mark))
@@ -46,5 +62,6 @@
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
+(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
-;; (server-start)
+(server-start)
