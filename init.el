@@ -20,7 +20,7 @@
 
 ;; miscellaneous buffer local variables
 (setq-default
- indent-tabs-mode nil
+ indent-tabs-mode t
  tab-width 4
  c-basic-offset 4)
 
