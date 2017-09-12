@@ -21,6 +21,7 @@
 ;; miscellaneous buffer local variables
 (setq-default
  indent-tabs-mode t
+ backward-delete-char-untabify-method nil ;; delete just one character
  tab-width 4
  c-basic-offset 4)
 
