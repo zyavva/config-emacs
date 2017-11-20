@@ -5,9 +5,10 @@
 
 (custom-set-variables
  '(custom-enabled-themes (quote (tango-dark)))
- '(package-selected-packages
-   (quote
-    (neotree fold-this expand-region intero json-mode markdown-mode))))
+; '(package-selected-packages
+;   (quote
+;    (neotree fold-this expand-region intero json-mode markdown-mode)))
+ )
 
 (custom-set-faces)
 
@@ -43,26 +44,22 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; spelling - requires 'aspell' program installed
-(setq ispell-program-name "aspell")
-(require 'ispell)
+;;(setq ispell-program-name "aspell")
+;;(require 'ispell)
 
 ;; expand selection
-(require 'expand-region)
-(global-set-key (kbd "C-M-w") 'er/expand-region)
-
-;; fold this
-(require 'fold-this)
-(global-set-key (kbd "C--") 'fold-active-region)
-(global-set-key (kbd "M-+") 'fold-this-unfold-all)
-
-;; NeoTree
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
+;;(require 'expand-region)
+;;(global-set-key (kbd "C-M-w") 'er/expand-region)
 
 ;; Common User Access key bindings
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
 ;;(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
+
+(setq explicit-shell-file-name
+      "C:/Program Files/Git/bin/bash.exe")
+(setq shell-file-name explicit-shell-file-name)
+(add-to-list 'exec-path "C:/Program Files/Git/bin")
 
 (server-start)
