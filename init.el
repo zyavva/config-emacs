@@ -27,10 +27,11 @@
  c-basic-offset 4)
 
 ;; connection proxy for office environment
-(setq url-proxy-services
- '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
-  ("http" . "127.0.0.1:3128")
-  ("https" . "127.0.0.1:3128")))
+( when (equal system-name "D5CG5110CLD")
+	(setq url-proxy-services
+		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
+			("http" . "127.0.0.1:3128")
+			("https" . "127.0.0.1:3128"))))
 
 ;; show line numbers
 ;(global-linum-mode t)
