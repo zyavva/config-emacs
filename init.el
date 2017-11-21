@@ -33,7 +33,7 @@
   ("https" . "127.0.0.1:3128")))
 
 ;; show line numbers
-(global-linum-mode t)
+;(global-linum-mode t)
 
 ;; show white spaces
 (global-whitespace-mode)
@@ -57,9 +57,19 @@
 (transient-mark-mode 1) ;; No region when it is not highlighted
 ;;(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
-(setq explicit-shell-file-name
-      "C:/Program Files/Git/bin/bash.exe")
+;(setq explicit-shell-file-name
+;      "C:/Program Files/Git/bin/bash.exe")
+;(setq shell-file-name explicit-shell-file-name)
+;(add-to-list 'exec-path "C:/Program Files/Git/bin")
+
+(add-hook 'comint-output-filter-functions
+    'shell-strip-ctrl-m nil t)
+(add-hook 'comint-output-filter-functions
+    'comint-watch-for-password-prompt nil t)
+(setq explicit-shell-file-name "bash.exe")
+;; For subprocesses invoked via the shell
+;; (e.g., "shell -c command")
 (setq shell-file-name explicit-shell-file-name)
-(add-to-list 'exec-path "C:/Program Files/Git/bin")
+
 
 (server-start)
