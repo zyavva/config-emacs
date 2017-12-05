@@ -1,26 +1,52 @@
-;; package managment
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; pre-configuration
 (setq host-name system-name)
 (setq office-env (equal system-name "D5CG5110CLD"))
 
-;; connection proxy for office environment
+; connection proxy for office environment
 (when office-env
 	(setq url-proxy-services
 		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
 			("http" . "127.0.0.1:3128")
 			("https" . "127.0.0.1:3128"))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; package management
+
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+
+; activate all the packages (in particular autoloads)
 (package-initialize)
 
-(custom-set-variables
- '(custom-enabled-themes (quote (tango-dark)))
+(setq package-list '(
+					expand-region
+					json-mode
+					markdown-mode))
+
+; fetch the list of packages available
+(unless package-archive-contents
+	(package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+	(unless (package-installed-p package)
+		(package-install package)))
+
+
+;(custom-set-variables
+; '(custom-enabled-themes (quote (tango-dark)))
 ; '(package-selected-packages
 ;   (quote
-;    (neotree fold-this expand-region intero json-mode markdown-mode)))
- )
+;    (neotree fold-this  intero json-mode markdown-mode)))
+; )
 
-(custom-set-faces)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
 
 ;; miscellaneous global variables
 (setq
@@ -78,3 +104,9 @@
 
 
 (server-start)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages (quote (markdown-mode json-mode expand-region))))
