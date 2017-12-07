@@ -3,12 +3,12 @@
 (setq host-name system-name)
 (setq office-env (equal system-name "D5CG5110CLD"))
 
-; connection proxy for office environment
-(when office-env
-	(setq url-proxy-services
-		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
-			("http" . "127.0.0.1:3128")
-			("https" . "127.0.0.1:3128"))))
+;; connection proxy for office environment
+;(when office-env
+;	(setq url-proxy-services
+;		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
+;			("http" . "127.0.0.1:3128")
+;			("https" . "127.0.0.1:3128"))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package management
