@@ -19,19 +19,34 @@
 ; activate all the packages (in particular autoloads)
 (package-initialize)
 
-(setq package-list '(
-					expand-region
-					json-mode
-					markdown-mode))
+;(setq package-list '(
+;					expand-region
+;					json-mode
+;					markdown-mode))
 
 ; fetch the list of packages available
 (unless package-archive-contents
-	(package-refresh-contents))
+  (package-refresh-contents)
+  (package-install 'use-package)) ; one package to role them all ;)
 
-; install the missing packages
-(dolist (package package-list)
-	(unless (package-installed-p package)
-		(package-install package)))
+(require 'use-package)
+
+(use-package json-mode
+  :ensure t
+  :pin melpa-stable)
+
+(use-package expand-region
+  :ensure t
+  :pin melpa-stable)
+
+(use-package markdown-mode
+  :ensure t
+  :pin melpa-stable)
+
+;; install the missing packages
+;(dolist (package package-list)
+;	(unless (package-installed-p package)
+;		(package-install package)))
 
 
 ;(custom-set-variables
