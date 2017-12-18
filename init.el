@@ -90,5 +90,6 @@
 ;; For subprocesses invoked via the shell (e.g., "shell -c command")
 (setq shell-file-name explicit-shell-file-name)
 
+(load-theme 'tango-dark)
 
 (server-start)
