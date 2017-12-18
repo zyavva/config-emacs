@@ -1,28 +1,22 @@
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; pre-configuration
-(setq host-name system-name)
-(setq office-env (equal system-name "D5CG5110CLD"))
-
 ; connection proxy for office environment
-(when office-env
+(when (equal system-name "D5CG5110CLD")
 	(setq url-proxy-services
 		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
 			("http" . "127.0.0.1:3128")
 			("https" . "127.0.0.1:3128"))))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package management
 
 (require 'package)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 
-; activate all the packages (in particular autoloads)
+; activate all the packages
 (package-initialize)
 
 ; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents)
-  (package-install 'use-package)) ; install one package to rule them all
+  (package-install 'use-package)) ; and install one package to rule them all
 
 (require 'use-package)
 
@@ -46,7 +40,6 @@
 
 (custom-set-faces)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; configuration
 
 ; miscellaneous global variables
