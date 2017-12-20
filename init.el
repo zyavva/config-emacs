@@ -51,13 +51,7 @@
 
 ;; miscellaneous buffer local variables
 (setq-default
-; indent-tabs-mode t
- backward-delete-char-untabify-method nil ;; delete just one character
- tab-width 4
- c-basic-offset 4)
-
-;; show line numbers
-;(global-linum-mode t)
+ backward-delete-char-untabify-method nil) ;; delete just one character
 
 ;; show white spaces
 (global-whitespace-mode)
@@ -71,15 +65,10 @@
 ;;(setq ispell-program-name "aspell")
 ;;(require 'ispell)
 
-;; expand selection
-;;(require 'expand-region)
-;;(global-set-key (kbd "C-M-w") 'er/expand-region)
-
 ;; Common User Access key bindings
 (cua-mode t)
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
-;;(setq cua-keep-region-after-copy t) ;; Standard Windows behaviour
 
 ;; shell mode
 (add-hook 'comint-output-filter-functions
