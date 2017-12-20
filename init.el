@@ -1,9 +1,9 @@
 ; connection proxy for office environment
 (when (equal system-name "D5CG5110CLD")
-	(setq url-proxy-services
-		'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
-			("http" . "127.0.0.1:3128")
-			("https" . "127.0.0.1:3128"))))
+  (setq url-proxy-services
+	'(("no_proxy" . "^(localhost|127\.0\.0\.1)")
+	  ("http" . "127.0.0.1:3128")
+	  ("https" . "127.0.0.1:3128"))))
 
 ;; package management
 
@@ -26,7 +26,9 @@
 
 (use-package expand-region
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :bind (("M-@" . er/expand-region)
+	 ("M-#" . er/contract-region)))
 
 (use-package markdown-mode
   :ensure t
@@ -42,7 +44,7 @@
 
 ;; configuration
 
-; miscellaneous global variables
+;; miscellaneous global variables
 (setq
  inhibit-startup-screen t
  create-lockfiles nil
@@ -67,7 +69,6 @@
 
 ;; Common User Access key bindings
 (cua-mode t)
-(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 (transient-mark-mode 1) ;; No region when it is not highlighted
 
 ;; shell mode
@@ -76,7 +77,7 @@
 (add-hook 'comint-output-filter-functions
     'comint-watch-for-password-prompt nil t)
 (setq explicit-shell-file-name "bash.exe")
-;; For subprocesses invoked via the shell (e.g., "shell -c command")
+; for subprocesses invoked via the shell (e.g., "shell -c command")
 (setq shell-file-name explicit-shell-file-name)
 
 (load-theme 'tango-dark)
