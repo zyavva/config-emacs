@@ -64,8 +64,8 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; spelling - requires 'aspell' program installed
-;;(setq ispell-program-name "aspell")
-;;(require 'ispell)
+(setq ispell-program-name "aspell")
+(require 'ispell)
 
 ;; Common User Access key bindings
 (cua-mode t)
