@@ -69,16 +69,7 @@
 
 ;; Common User Access key bindings
 (cua-mode t)
-(transient-mark-mode 1) ;; No region when it is not highlighted
-
-;; shell mode
-(add-hook 'comint-output-filter-functions
-    'shell-strip-ctrl-m nil t)
-(add-hook 'comint-output-filter-functions
-    'comint-watch-for-password-prompt nil t)
-(setq explicit-shell-file-name "bash.exe")
-; for subprocesses invoked via the shell (e.g., "shell -c command")
-(setq shell-file-name explicit-shell-file-name)
+(transient-mark-mode 1) ; No region when it is not highlighted
 
 (load-theme 'tango-dark)
 
