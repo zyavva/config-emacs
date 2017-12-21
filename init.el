@@ -30,7 +30,7 @@
   :bind (("M-@" . er/expand-region)
 	 ("M-#" . er/contract-region)))
 
-(use-package markdown-mode
+(use-package markdown-mode ; requires 'markdown' command for preview
   :ensure t
   :pin melpa-stable)
 
