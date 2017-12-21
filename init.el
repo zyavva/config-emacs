@@ -32,7 +32,9 @@
 
 (use-package markdown-mode ; requires 'markdown' command for preview
   :ensure t
-  :pin melpa-stable)
+  :pin melpa-stable
+  :init
+  (add-hook 'markdown-mode-hook 'flyspell-mode))
 
 (custom-set-variables
  '(package-selected-packages
