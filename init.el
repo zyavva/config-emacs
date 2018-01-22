@@ -5,6 +5,7 @@
 	  ("http" . "127.0.0.1:3128")
 	  ("https" . "127.0.0.1:3128"))))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package management
 
 (require 'package)
@@ -50,6 +51,7 @@
  ;; If there is more than one, they won't work right.
  )
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; configuration
 
 ;; miscellaneous global variables
@@ -79,9 +81,18 @@
 (cua-mode t)
 (transient-mark-mode 1) ; No region when it is not highlighted
 
+;; custom keybindings
 ; invoke M-x without the Alt key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-k" 'kill-region)
+
+; lose the UI
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 
 (load-theme 'tango-dark)
 
 (server-start)
+(put 'scroll-left 'disabled nil)
