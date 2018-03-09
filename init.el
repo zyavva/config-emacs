@@ -80,12 +80,15 @@
 ;; Common User Access key bindings
 (cua-mode t)
 (transient-mark-mode 1) ; No region when it is not highlighted
+; custom keybindings for CUA mode
+(global-set-key (kbd "C->") 'cua-scroll-up)
+(global-set-key (kbd "C-<") 'cua-scroll-down)
 
 ;; custom keybindings
 ; invoke M-x without the Alt key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-w" 'backward-kill-word)
-(global-set-key "\C-x\C-k" 'kill-region)
+;(global-set-key "\C-x\C-k" 'kill-region)
 
 ; lose the UI
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
