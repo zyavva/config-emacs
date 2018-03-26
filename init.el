@@ -65,13 +65,18 @@
 (setq-default
  backward-delete-char-untabify-method nil) ;; delete just one character
 
+;; starting emacs client full screen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+; lose the UI
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+
 ;; show white spaces
 (global-whitespace-mode)
 (setq whitespace-style
  '(face spaces trailing space-before-tab newline empty space-after-tab space-mark tab-mark newline-mark))
-
-;; starting emacs client full screen
-(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; spelling - requires 'aspell' program installed
 (setq ispell-program-name "aspell")
@@ -88,13 +93,8 @@
 ; invoke M-x without the Alt key
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key "\C-w" 'backward-kill-word)
-;(global-set-key "\C-x\C-k" 'kill-region)
 
-; lose the UI
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-
+; set theme
 (load-file "~/.emacs.d/themes/default-black-theme.el")
 
 (server-start)
