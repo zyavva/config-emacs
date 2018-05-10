@@ -87,13 +87,13 @@
 (transient-mark-mode 1) ; No region when it is not highlighted
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 ; custom keybindings for CUA mode
-(global-set-key (kbd "C->") 'cua-scroll-up)
-(global-set-key (kbd "C-<") 'cua-scroll-down)
+;(global-set-key (kbd "C->") 'cua-scroll-up)
+;(global-set-key (kbd "C-<") 'cua-scroll-down)
 
 ;; custom keybindings
 ; invoke M-x without the Alt key
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-w" 'backward-kill-word)
+;(global-set-key "\C-x\C-m" 'execute-extended-command)
+;(global-set-key "\C-w" 'backward-kill-word)
 
 ; set theme
 (load-file "~/.emacs.d/themes/default-black-theme.el")
