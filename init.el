@@ -83,9 +83,9 @@
 (require 'ispell)
 
 ;; Common User Access key bindings
-(cua-mode t)
-(transient-mark-mode 1) ; No region when it is not highlighted
-(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
+;(cua-mode t)
+;(transient-mark-mode 1) ; No region when it is not highlighted
+;(setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 ; custom keybindings for CUA mode
 ;(global-set-key (kbd "C->") 'cua-scroll-up)
 ;(global-set-key (kbd "C-<") 'cua-scroll-down)
