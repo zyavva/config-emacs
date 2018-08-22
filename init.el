@@ -88,7 +88,6 @@
 (setq cua-auto-tabify-rectangles nil) ;; Don't tabify after rectangle commands
 
 ;; custom keybindings
-;(global-set-key "\C-x\C-m" 'execute-extended-command) ; invoke M-x without the Alt key
-;(global-set-key "\C-w" 'backward-kill-word)
+(global-set-key "\C-x\C-m" 'execute-extended-command) ; invoke M-x without the Alt key
 
 ; (server-start)
