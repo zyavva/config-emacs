@@ -1,11 +1,3 @@
-;;; connection proxy for office environment
-
-(when (equal system-name "DCT9R1N2")
-  (setq url-proxy-services
-    '(("no_proxy" . "^(localhost|127\.0\.0\.1)")
-      ("http" . "127.0.0.1:3128")
-      ("https" . "127.0.0.1:3128"))))
-
 ;;; package management
 
 (require 'package)
