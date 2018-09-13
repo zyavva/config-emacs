@@ -30,6 +30,10 @@
   :init
   (add-hook 'markdown-mode-hook 'flyspell-mode))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :pin melpa-stable)
+
 ;;; configuration
 
 (custom-set-variables
@@ -82,10 +86,16 @@
 ;; custom keybindings
 (global-set-key "\C-x\C-m" 'execute-extended-command) ; invoke M-x without the Alt key
 (when (eq system-type 'darwin) ;; mac specific settings
-  (setq mac-option-modifier 'alt)
+;  (setq mac-option-modifier 'alt)
+;  (setq mac-command-modifier 'meta)
   (setq mac-right-option-modifier 'none)
-  (setq mac-command-modifier 'meta)
-  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
-  )
+  (global-set-key [kp-delete] 'delete-char)) ;; sets fn-delete to be right-delete
+
+(exec-path-from-shell-initialize) ; sets $MANPATH, $PATH and exec-path from shell
+
+;;; built-in modes configutarions
+
+;; dired
+(setq dired-dwim-target t)
 
 ; (server-start)
