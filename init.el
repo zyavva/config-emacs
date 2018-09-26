@@ -89,10 +89,13 @@
 ;  (setq mac-option-modifier 'alt)
 ;  (setq mac-command-modifier 'meta)
   (setq mac-right-option-modifier 'none)
-  (global-set-key [kp-delete] 'delete-char)) ;; sets fn-delete to be right-delete
-(add-hook 'term-mode-hook
-  (lambda ()
-    (define-key term-raw-map (kbd "s-v") 'term-paste)))
+  (global-set-key [kp-delete] 'delete-char) ;; sets fn-delete to be right-delete
+  (add-hook 'term-mode-hook
+    (lambda ()
+      (define-key term-raw-map (kbd "s-v") 'term-paste)
+    )
+  )
+)
 
 (exec-path-from-shell-initialize) ; sets $MANPATH, $PATH and exec-path from shell
 
