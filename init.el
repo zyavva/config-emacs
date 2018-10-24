@@ -34,6 +34,10 @@
   :ensure t
   :pin melpa-stable)
 
+(use-package avy
+  :ensure t
+  :pin melpa-stable)
+
 ;;; configuration
 
 (custom-set-variables
@@ -41,14 +45,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (expand-region json-mode markdown-mode))))
+ '(package-selected-packages (quote (avy expand-region json-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(whitespace-space ((t (:foreground "darkgray"))))) ; override space background colour in whitespace mode
+ '(whitespace-space ((t (:foreground "darkgray")))))
+ ; override space background colour in whitespace mode
 
 ;; miscellaneous global variables
 (setq
