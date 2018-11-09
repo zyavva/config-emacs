@@ -109,7 +109,7 @@
 )
 (global-set-key (kbd "C-;") 'avy-goto-word-1)
 (global-set-key (kbd "C-'") 'avy-goto-line)
-(global-set-key (kbd "C-c SPC") 'ace-window)
+(global-set-key (kbd "C-x o") 'ace-window)
 
 (exec-path-from-shell-initialize) ; sets $MANPATH, $PATH and exec-path from shell
 
