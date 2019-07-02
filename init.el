@@ -21,8 +21,9 @@
   :ensure t
   :pin melpa-stable
   :bind (
-     ("M-@" . er/expand-region)
-     ("C-S-w" . er/contract-region)))
+;;    ("M-@" . er/expand-region)
+    ("C-M-w" . er/expand-region)
+    ("C-S-w" . er/contract-region)))
 
 (use-package markdown-mode ; requires 'markdown' command for preview
   :ensure t
