@@ -43,6 +43,9 @@
   :ensure t
   :pin melpa-stable)
 
+(use-package eat
+  :ensure t)
+
 ;;; configuration
 
 (custom-set-variables
@@ -51,8 +54,8 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   (quote
-    (ace-window avy expand-region json-mode markdown-mode))))
+   '(ace-window eat exec-path-from-shell expand-region json-mode
+		markdown-mode)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
